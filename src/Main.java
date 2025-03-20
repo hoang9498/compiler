@@ -12,7 +12,10 @@ public class Main {
         NFA c = NFA.createBasicNFA('c');
         NFA regex = NFA.concatenate(abStar, c);
 
-        // In trạng thái NFA
-        regex.printNFA();
+        // Convert NFA to DFA
+        DFA dfa = SubsetConstruction.convertNFAtoDFA(regex);
+
+        // In DFA
+        dfa.printDFA();
         }
     }
